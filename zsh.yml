@@ -1,0 +1,79 @@
+---
+- hosts: all
+  tasks: 
+    - name: Install Git
+      become: true
+      ansible.builtin.package:
+        state: present
+        name: git
+
+    - name: Install zsh
+      become: true
+      ansible.builtin.package:
+        name: zsh
+        state: present
+
+    - name: Install ripgrep
+      become: true
+      ansible.builtin.package:
+        state: present
+        name: ripgrep
+
+    - name: Install zoxide
+      become: true
+      ansible.builtin.package:
+        state: present
+        name: zoxide
+
+    - name: Install fzf (command-line fuzzy finder)
+      become: true
+      ansible.builtin.package:
+        state: present
+        name: fzf
+
+    - name: Change user shell to zsh
+      become: true
+      ansible.builtin.user:
+        name: "{{ ansible_user_id }}"
+        shell: /bin/zsh
+
+    - name: Install curl (for starship installation)
+      become: true
+      ansible.builtin.package:
+        state: present
+        name: curl
+
+    - name: Get starship install script
+      ansible.builtin.get_url:
+        url: https://starship.rs/install.sh
+        dest: /tmp/starship_install.sh
+        mode: '0755'
+      register: starship_installation_script
+
+    - name: Install starship with installation script
+      become: true
+      ansible.builtin.shell:
+        cmd: /tmp/starship_install.sh --yes
+        executable: /bin/sh
+      when: starship_installation_script.changed
+    # if the previous task hasn't changed, the shell script is already there
+    # and we have already installed starship
+    # we check this to satisfy idempotence
+    - name: Clone zsh autosuggestions 
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: ~/.zsh/zsh-autosuggestions
+        clone: yes
+        update: yes
+
+    - name: Copy zshconfig 
+      ansible.builtin.copy:
+        src: zshconfig
+        dest: ~/.zshrc
+        mode: 0644 
+
+    - name: Copy starship.toml
+      ansible.builtin.copy:
+        src: starship.toml
+        dest: ~/.config/starship.toml
+        mode: 0644 

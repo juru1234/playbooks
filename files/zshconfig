@@ -1,0 +1,7 @@
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+alias l="ls -al"
+alias v="nvim"
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
