@@ -1,3 +1,4 @@
+## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
 ---
 - hosts: all
   tasks: 
