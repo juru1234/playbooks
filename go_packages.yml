@@ -9,3 +9,15 @@
     - name: Install fzf
       ansible.builtin.shell:
         cmd: go install github.com/junegunn/fzf@latest
+
+    - name: Install fzf keybindings
+      ansible.builtin.shell:
+        cmd: go install github.com/junegunn/fzf@latest
+
+    - name: Install fzf keybindings and completion
+      ansible.builtin.shell: |
+        mkdir -p $HOME/.local/share/fzf
+        wget --directory-prefix=$HOME/.local/share/fzf https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
+        chmod +x $HOME/.local/share/fzf/key-bindings.zsh
+        wget --directory-prefix=$HOME/.local/share/fzf https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
+        chmod +x $HOME/.local/share/fzf/completion.zsh
