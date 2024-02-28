@@ -1,0 +1,34 @@
+---
+- hosts: all
+  tasks:
+    - name: Install the latest version of unzip, cmake and gettext
+      ansible.builtin.package:
+        name:
+          - unzip
+          - cmake
+          - gettext
+        state: latest
+    - name: Clone Neovim repository
+      git:
+        repo: https://github.com/juru1234/neovim_luajit2.git 
+        dest: "/tmp/neovim"
+        version: v0.9.5_luajit2
+        clone: yes
+        accept_hostkey: yes
+
+    - name: Build Neovim
+      command:
+        cmd: make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.local
+        chdir: "/tmp/neovim"
+
+    - name: Install Neovim
+      command:
+        cmd: make install
+        chdir: "/tmp/neovim"
+
+    - name: remove build dir
+      command:
+        cmd: rm -rf /tmp/neovim 
+
+
+
