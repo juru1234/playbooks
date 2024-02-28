@@ -5,3 +5,7 @@
     - name: Install lazygit
       ansible.builtin.shell:
         cmd: go install github.com/jesseduffield/lazygit@latest
+
+    - name: Install fzf
+      ansible.builtin.shell:
+        cmd: go install github.com/junegunn/fzf@latest

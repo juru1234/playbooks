@@ -13,3 +13,7 @@
     - name: Install eza
       ansible.builtin.shell:
         cmd: cargo install eza
+
+    - name: Install ripgrep
+      ansible.builtin.shell:
+        cmd: cargo install ripgrep
