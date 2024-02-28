@@ -1,0 +1,19 @@
+## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
+---
+- hosts: all
+  tasks: 
+    - name: Install Fedora Packages 
+      ansible.builtin.package:
+        name:
+          - unzip
+          - cmake
+          - gettext
+          - git
+          - zsh
+          - ripgrep
+          - zoxide
+          - fzf
+          - eza
+          - gcc
+          - g++
+      become: yes

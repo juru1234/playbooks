@@ -2,12 +2,6 @@
 ---
 - hosts: all
   tasks: 
-    - name: Change user shell to zsh
-      become: true
-      ansible.builtin.user:
-        name: "{{ ansible_user_id }}"
-        shell: /bin/zsh
-
     - name: Clone zsh autosuggestions 
       git:
         repo: https://github.com/zsh-users/zsh-autosuggestions
@@ -15,7 +9,17 @@
         clone: yes
         update: yes
 
-    - name: Copy zshconfig 
+    - name: Install starship with Rust
+      ansible.builtin.shell:
+        cmd: cargo install starship --locked
+
+    - name: Copy starship.toml
+      ansible.builtin.copy:
+        src: starship.toml
+        dest: ~/.config/starship.toml
+        mode: 0644 
+
+    - name: Copy zshconfig
       ansible.builtin.copy:
         src: zshconfig
         dest: ~/.zshrc

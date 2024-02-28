@@ -1,0 +1,10 @@
+
+## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
+---
+- hosts: all
+  tasks: 
+    - name: Change user shell to zsh
+      become: true
+      ansible.builtin.user:
+        name: "{{ ansible_user_id }}"
+        shell: /bin/zsh
