@@ -9,7 +9,7 @@
         clone: yes
         update: yes
 
-    - name: Install starship with Rust
+    - name: Install starship with cargo
       ansible.builtin.shell:
         cmd: cargo install starship --locked
 
