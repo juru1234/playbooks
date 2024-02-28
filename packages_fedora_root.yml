@@ -16,4 +16,5 @@
           - eza
           - gcc
           - g++
+          - openssl-devel
       become: yes
