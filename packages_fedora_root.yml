@@ -17,4 +17,5 @@
           - gcc
           - g++
           - openssl-devel
+          - golang
       become: yes

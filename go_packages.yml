@@ -1,0 +1,7 @@
+## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
+---
+- hosts: all
+  tasks: 
+    - name: Install lazygit
+      ansible.builtin.shell:
+        cmd: go install github.com/jesseduffield/lazygit@latest
