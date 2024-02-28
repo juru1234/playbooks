@@ -2,7 +2,7 @@
 ---
 - hosts: all
   tasks: 
-    - name: Install curl (for starship installation)
+    - name: Install curl
       become: true
       ansible.builtin.package:
         state: present

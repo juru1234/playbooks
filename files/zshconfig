@@ -4,6 +4,7 @@ alias v="nvim"
 alias ls="eza"
 alias l="ls -al"
 alias cd="z"
+alias cat="bat"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$GOBIN:$PATH
