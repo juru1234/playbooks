@@ -8,10 +8,6 @@
         name: "{{ ansible_user_id }}"
         shell: /bin/zsh
 
-    - name: Install starship with Rust 
-      ansible.builtin.shell:
-        cmd: cargo install starship --locked
-
     - name: Clone zsh autosuggestions 
       git:
         repo: https://github.com/zsh-users/zsh-autosuggestions
