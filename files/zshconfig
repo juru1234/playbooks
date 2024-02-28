@@ -1,7 +1,8 @@
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
-alias l="ls -al"
 alias v="nvim"
+alias ls="eza"
+alias l="ls -al"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$GOBIN:$PATH
