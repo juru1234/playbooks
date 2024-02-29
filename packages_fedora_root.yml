@@ -18,4 +18,5 @@
           - g++
           - openssl-devel
           - golang
+          - wget
       become: yes
