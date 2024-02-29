@@ -13,6 +13,12 @@
       ansible.builtin.shell:
         cmd: cargo install starship --locked
 
+    - name: Copy starship.toml
+      ansible.builtin.copy:
+        src: starship.toml
+        dest: ~/.config/starship.toml
+        mode: 0644 
+
     - name: Copy zshconfig
       ansible.builtin.copy:
         src: zshconfig
