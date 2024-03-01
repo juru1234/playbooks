@@ -82,6 +82,11 @@ format = '\[[$symbol($version)]($style)\]'
 [hg_branch]
 format = '\[[$symbol$branch]($style)\]'
 
+[hostname]
+ssh_only = true
+format = '\[[$hostname]($style)\] '
+disabled = false
+
 [java]
 format = '\[[$symbol($version)]($style)\]'
 
