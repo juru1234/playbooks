@@ -1,0 +1,15 @@
+## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
+---
+- hosts: all
+  tasks: 
+    - name: Copy sway config
+      ansible.builtin.copy:
+        src: swayconfig 
+        dest: ~/.config/sway/config
+        mode: 0644 
+
+    - name: Copy waybar config
+      ansible.builtin.copy:
+        src: waybarconfig
+        dest: ~/.config/waybar/config
+        mode: 0644 
