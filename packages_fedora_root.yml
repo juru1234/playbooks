@@ -23,4 +23,5 @@
           - kanshi
           - sway
           - waybar
+          - alacritty
       become: yes
