@@ -4,6 +4,7 @@ SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
 setopt share_history
 alias v="nvim"
+alias vi="nvim"
 alias ls="eza"
 alias l="ls -al"
 alias cd="z"
