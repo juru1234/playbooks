@@ -20,4 +20,7 @@
           - golang
           - wget
           - neovim
+          - kanshi
+          - sway
+          - waybar
       become: yes

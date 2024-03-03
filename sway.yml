@@ -19,3 +19,7 @@
         src: kanshiconfig
         dest: ~/.config/kanshi/config
         mode: 0644 
+
+    - name: Enable kanshi service
+      ansible.builtin.shell:
+        cmd: systemctl --user enable kanshi.service
