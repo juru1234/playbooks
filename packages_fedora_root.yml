@@ -24,4 +24,6 @@
           - sway
           - waybar
           - alacritty
+          - pulseaudio-utils
+          - brightnessctl
       become: yes
