@@ -8,7 +8,9 @@
 # Regular clipboard
 #exec wl-paste -t text --watch /home/julian/go/bin/cliphist store
 exec wl-paste -p -t text --watch wl-copy
-exec_always pkill kanshi; exec kanshi
+
+#kanshi must run as a service only: systemctl --user enable kanshi.service
+#exec_always pkill kanshi; exec kanshi
 
 # Primary clipboard
 #exec wl-paste -p -t text --watch /home/julian/go/bin/cliphist store -P
