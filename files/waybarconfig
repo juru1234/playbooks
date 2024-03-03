@@ -21,7 +21,8 @@
     "tooltip-format-wifi": "strength: {signalStrength}",
     "tooltip-format-ethernet": "{ifname}",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
+    "max-length": 50,
+    "on-click": "swaymsg exec '$term -e nmtui'",
     },
     "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
