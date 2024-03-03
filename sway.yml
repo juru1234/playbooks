@@ -13,3 +13,9 @@
         src: waybarconfig
         dest: ~/.config/waybar/config
         mode: 0644 
+
+    - name: Copy kanshi config
+      ansible.builtin.copy:
+        src: kanshiconfig
+        dest: ~/.config/kanshi/config
+        mode: 0644 
