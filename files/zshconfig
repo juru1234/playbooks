@@ -85,3 +85,6 @@ function man \
   debman {
   colored $0 "$@"
 }
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7c6f64"
+
