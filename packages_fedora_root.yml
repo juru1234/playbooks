@@ -1,29 +1,25 @@
-## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
----
-- hosts: all
-  tasks: 
-    - name: Install Fedora Packages 
-      ansible.builtin.package:
-        name:
-          - unzip
-          - cmake
-          - gettext
-          - git
-          - zsh
-          - ripgrep
-          - zoxide
-          - fzf
-          - eza
-          - gcc
-          - g++
-          - openssl-devel
-          - golang
-          - wget
-          - neovim
-          - kanshi
-          - sway
-          - waybar
-          - alacritty
-          - pulseaudio-utils
-          - brightnessctl
-      become: yes
+- name: Install Fedora Packages 
+  ansible.builtin.package:
+    name:
+      - unzip
+      - cmake
+      - gettext
+      - git
+      - zsh
+      - ripgrep
+      - zoxide
+      - fzf
+      - eza
+      - gcc
+      - g++
+      - openssl-devel
+      - golang
+      - wget
+      - neovim
+      - kanshi
+      - sway
+      - waybar
+      - alacritty
+      - pulseaudio-utils
+      - brightnessctl
+  become: yes

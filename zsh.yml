@@ -1,26 +1,27 @@
-## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
----
-- hosts: all
-  tasks: 
-    - name: Clone zsh autosuggestions 
-      git:
-        repo: https://github.com/zsh-users/zsh-autosuggestions
-        dest: ~/.zsh/zsh-autosuggestions
-        clone: yes
-        update: yes
+- name: Clone zsh autosuggestions 
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.zsh/zsh-autosuggestions
+    clone: yes
+    update: yes
 
-    - name: Install starship with cargo
-      ansible.builtin.shell:
-        cmd: cargo install starship --locked
+- name: Install starship with cargo
+  ansible.builtin.shell:
+    cmd: cargo install starship --locked
 
-    - name: Copy starship.toml
-      ansible.builtin.copy:
-        src: starship.toml
-        dest: ~/.config/starship.toml
-        mode: 0644 
+- name: Create .config directory
+  ansible.builtin.file:
+    path: ~/.config
+    state: directory
 
-    - name: Copy zshconfig
-      ansible.builtin.copy:
-        src: zshconfig
-        dest: ~/.zshrc
-        mode: 0644 
+- name: Copy starship.toml
+  ansible.builtin.copy:
+    src: starship.toml
+    dest: ~/.config/starship.toml
+    mode: 0644 
+
+- name: Copy zshconfig
+  ansible.builtin.copy:
+    src: zshconfig
+    dest: ~/.zshrc
+    mode: 0644 

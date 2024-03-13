@@ -1,25 +1,21 @@
-## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
----
-- hosts: all
-  tasks: 
-    - name: Copy sway config
-      ansible.builtin.copy:
-        src: swayconfig 
-        dest: ~/.config/sway/config
-        mode: 0644 
+- name: Copy sway config
+  ansible.builtin.copy:
+    src: swayconfig 
+    dest: ~/.config/sway/config
+    mode: 0644 
 
-    - name: Copy waybar config
-      ansible.builtin.copy:
-        src: waybarconfig
-        dest: ~/.config/waybar/config
-        mode: 0644 
+- name: Copy waybar config
+  ansible.builtin.copy:
+    src: waybarconfig
+    dest: ~/.config/waybar/config
+    mode: 0644 
 
-    - name: Copy kanshi config
-      ansible.builtin.copy:
-        src: kanshiconfig
-        dest: ~/.config/kanshi/config
-        mode: 0644 
+- name: Copy kanshi config
+  ansible.builtin.copy:
+    src: kanshiconfig
+    dest: ~/.config/kanshi/config
+    mode: 0644 
 
-    - name: Enable kanshi service
-      ansible.builtin.shell:
-        cmd: systemctl --user enable kanshi.service
+- name: Enable kanshi service
+  ansible.builtin.shell:
+    cmd: systemctl --user enable kanshi.service

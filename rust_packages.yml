@@ -1,19 +1,15 @@
-## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
----
-- hosts: all
-  tasks: 
-    - name: Install zoxide
-      ansible.builtin.shell:
-        cmd: cargo install zoxide
+- name: Install zoxide
+  ansible.builtin.shell:
+    cmd: cargo install zoxide
 
-    - name: Install bat
-      ansible.builtin.shell:
-        cmd: cargo install bat
+- name: Install bat
+  ansible.builtin.shell:
+    cmd: cargo install bat
 
-    - name: Install eza
-      ansible.builtin.shell:
-        cmd: cargo install eza
+- name: Install eza
+  ansible.builtin.shell:
+    cmd: cargo install eza
 
-    - name: Install ripgrep
-      ansible.builtin.shell:
-        cmd: cargo install ripgrep
+- name: Install ripgrep
+  ansible.builtin.shell:
+    cmd: cargo install ripgrep

@@ -12,13 +12,13 @@ alias cat="bat"
 alias lg="lazygit"
 
 #use gnome keyring
-mkdir -vp ~/.config/systemd/user/
+#mkdir -vp ~/.config/systemd/user/
 #cp /usr/lib/systemd/user/gnome-keyring-daemon.service ~/.config/systemd/user/
 # edit file that it includes: --components="pkcs11,secrets,ssh"
 # systemctl daemon-reload --user
 # systemctl enable --now --user gnome-keyring-daemon
 # systemctl status --user gnome-keyring-daemon
-export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+#export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
