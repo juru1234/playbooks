@@ -7,3 +7,8 @@
 - name: Install RustUp
   ansible.builtin.shell: 
     cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+- name: Rustup install rust-analyzer
+  command:
+    cmd: rustup component add rust-analyzer
+
