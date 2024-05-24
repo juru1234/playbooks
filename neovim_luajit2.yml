@@ -2,7 +2,7 @@
   git:
     repo: https://github.com/juru1234/neovim_luajit2.git 
     dest: "/tmp/neovim"
-    version: v0.9.5_luajit2
+    version: v0.10.0_luajit2
     clone: yes
     accept_hostkey: yes
 
