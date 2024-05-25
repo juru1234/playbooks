@@ -24,8 +24,8 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$GOBIN:$PATH
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.local/share/fzf/key-bindings.zsh
-source ~/.local/share/fzf/completion.zsh
+source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/fzf/shell/completion.zsh
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 

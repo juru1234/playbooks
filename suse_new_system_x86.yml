@@ -1,0 +1,7 @@
+## Run locally: ansible-playbook -i localhost, playbooks/zsh.yml --connection=local -K
+---
+- hosts: all
+  tasks:
+    - include_tasks: packages_suse_root.yml
+    - include_tasks: zsh_suse_x86.yml
+    - include_tasks: zsh_change_user_shell_root.yml

@@ -1,0 +1,22 @@
+- name: Install OpenSUSE Packages
+  community.general.zypper:
+    name:
+      - unzip
+      - bat
+      - cmake
+      - gettext
+      - git
+      - zsh
+      - ripgrep
+      - zoxide
+      - fzf
+      - eza
+      - gcc
+      - lazygit
+      - openssl-devel
+      - golang
+      - wget
+      - neovim
+      - alacritty
+      - starship
+  become: yes
