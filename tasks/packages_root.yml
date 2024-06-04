@@ -1,0 +1,55 @@
+- name: Install Fedora Packages 
+  ansible.builtin.package:
+    name:
+      - unzip
+      - cmake
+      - gettext
+      - git
+      - zsh
+      - ripgrep
+      - zoxide
+      - fzf
+      - eza
+      - curl
+      - gcc
+      - bat
+      - foot
+      - g++
+      - openssl-devel
+      - golang
+      - wget
+      - neovim
+      - kanshi
+      - sway
+      - waybar
+      - alacritty
+      - pulseaudio-utils
+      - brightnessctl
+  when: ansible_facts['os_family'] == "Fedora"
+  become: yes
+
+- name: Install OpenSUSE Packages
+  community.general.zypper:
+    name:
+      - unzip
+      - bat
+      - cmake
+      - gettext
+      - git
+      - zsh
+      - ripgrep
+      - foot
+      - curl
+      - zoxide
+      - fzf
+      - eza
+      - gcc
+      - lazygit
+      - openssl-devel
+      - golang
+      - wget
+      - neovim
+      - alacritty
+      - starship
+  when: ansible_facts['os_family'] == "Suse"
+  become: yes

@@ -9,7 +9,7 @@
   ansible.builtin.shell:
     cmd: cargo install starship --locked
   when:
-    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['os_family'] == "Fedora"
 
 - name: Create .config directory
   ansible.builtin.file:
@@ -34,4 +34,12 @@
     dest: ~/.zshrc
     mode: 0644 
   when:
-    - ansible_facts['distribution'] == "Fedora"
+    - ansible_facts['os_family'] == "Fedora"
+
+- name: Copy zshconfig_suse
+  ansible.builtin.copy:
+    src: zshconfig_fedora
+    dest: ~/.zshrc
+    mode: 0644 
+  when:
+    - ansible_facts['os_family'] == "Suse"

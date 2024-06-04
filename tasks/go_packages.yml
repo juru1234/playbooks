@@ -1,14 +1,12 @@
 - name: Install lazygit
   ansible.builtin.shell:
     cmd: go install github.com/jesseduffield/lazygit@latest
+  when: ansible_facts['os_family'] == "Fedora"
 
 - name: Install fzf
   ansible.builtin.shell:
     cmd: go install github.com/junegunn/fzf@latest
-
-- name: Install fzf keybindings
-  ansible.builtin.shell:
-    cmd: go install github.com/junegunn/fzf@latest
+  when: ansible_facts['os_family'] == "Fedora"
 
 - name: Install fzf keybindings and completion
   ansible.builtin.shell: |

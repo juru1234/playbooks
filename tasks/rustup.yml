@@ -10,5 +10,5 @@
 
 - name: Rustup install rust-analyzer
   command:
-    cmd: rustup component add rust-analyzer
+    cmd: ~/.cargo/bin/rustup component add rust-analyzer
 
