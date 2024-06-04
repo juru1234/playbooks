@@ -2,11 +2,11 @@
 ---
 - hosts: all
   tasks: 
-    - include_tasks: packages_fedora_root.yml
-    - include_tasks: rustup.yml
-    - include_tasks: rust_packages.yml
-    - include_tasks: go_packages.yml
-    - include_tasks: zsh.yml
-    - include_tasks: zsh_change_user_shell_root.yml
-    - include_tasks: neovim_luajit2.yml
-    - include_tasks: neovim_config.yml
+    - include_tasks: tasks/packages_fedora_root.yml
+    - include_tasks: tasks/rustup.yml
+    - include_tasks: tasks/rust_packages.yml
+    - include_tasks: tasks/go_packages.yml
+    - include_tasks: tasks/zsh.yml
+    - include_tasks: tasks/zsh_change_user_shell_root.yml
+    - include_tasks: tasks/neovim_luajit2.yml
+    - include_tasks: tasks/neovim_config.yml

@@ -8,6 +8,8 @@
 - name: Install starship with cargo
   ansible.builtin.shell:
     cmd: cargo install starship --locked
+  when:
+    - ansible_facts['distribution'] == "Fedora"
 
 - name: Create .config directory
   ansible.builtin.file:
@@ -23,5 +25,13 @@
 - name: Copy zshconfig
   ansible.builtin.copy:
     src: zshconfig
+    dest: ~/.zshconfig
+    mode: 0644 
+
+- name: Copy zshconfig_fedora
+  ansible.builtin.copy:
+    src: zshconfig_fedora
     dest: ~/.zshrc
     mode: 0644 
+  when:
+    - ansible_facts['distribution'] == "Fedora"
