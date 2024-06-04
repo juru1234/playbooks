@@ -5,20 +5,24 @@
     version: v0.10.0_luajit2
     clone: yes
     accept_hostkey: yes
+  when: ansible_architecture == "s390x"
 
 - name: Build Neovim
   command:
     cmd: make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.local
     chdir: "/tmp/neovim"
+  when: ansible_architecture == "s390x"
 
 - name: Install Neovim
   command:
     cmd: make install
     chdir: "/tmp/neovim"
+  when: ansible_architecture == "s390x"
 
 - name: remove build dir
   command:
     cmd: rm -rf /tmp/neovim 
+  when: ansible_architecture == "s390x"
 
 
 
