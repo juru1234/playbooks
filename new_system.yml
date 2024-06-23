@@ -10,4 +10,3 @@
     - include_tasks: tasks/zsh.yml
     - include_tasks: tasks/zsh_change_user_shell_root.yml
     - include_tasks: tasks/neovim_luajit2.yml
-    - include_tasks: tasks/neovim_config.yml
