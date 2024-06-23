@@ -2,6 +2,7 @@
   ansible.builtin.package:
     name:
       - unzip
+      - stow
       - cmake
       - gettext
       - git
@@ -32,6 +33,7 @@
   community.general.zypper:
     name:
       - unzip
+      - stow
       - bat
       - cmake
       - gettext
