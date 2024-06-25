@@ -26,7 +26,7 @@
       - alacritty
       - pulseaudio-utils
       - brightnessctl
-  when: ansible_facts['os_family'] == "Fedora"
+  when: ansible_facts['os_family'] == "RedHat"
   become: yes
 
 - name: Install OpenSUSE Packages
