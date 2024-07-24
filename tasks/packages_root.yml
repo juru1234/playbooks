@@ -52,6 +52,5 @@
       - wget
       - neovim
       - alacritty
-      - starship
   when: ansible_facts['os_family'] == "Suse"
   become: yes
