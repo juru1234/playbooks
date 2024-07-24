@@ -5,6 +5,5 @@
     - include_tasks: tasks/debug.yml
     - include_tasks: tasks/packages_root.yml
     - include_tasks: tasks/rustup.yml
-    - include_tasks: tasks/rust_packages.yml
     - include_tasks: tasks/go_packages.yml
     - include_tasks: tasks/zsh_change_user_shell_root.yml

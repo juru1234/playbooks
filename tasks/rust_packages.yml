@@ -1,4 +1,0 @@
-- name: Install zoxide
-  ansible.builtin.shell:
-    cmd: cargo install zoxide
-  when: ansible_facts['os_family'] == "RedHat"
